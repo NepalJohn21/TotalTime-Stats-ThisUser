@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=360, initial-scale=1.0">
+    <title>Total time stats on this user</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <h3>Query Selector</h3>
+    <input value=".myValue" type="text" name="tex" class="qs">
+    <h3>Output</h3>
+    <textarea name="myval" class="code" cols="30" rows="10">&lt;script&gt;&lt;/script&gt;</textarea>
+    <div style="background-color: darkred;color: white;font-family: Arial, Helvetica, sans-serif;" class="stats"><h4 class="count">1</h4></div>
+    <script>
+        const a = "/"
+        var qs = document.querySelector(".qs")
+        var code = document.querySelector(".code")
+
+        setInterval(() => {
+            code.value = `<script>
+                document.querySelector("${qs}").innerHTML = "<div style="background-color: darkred;color: white;font-family: Arial, Helvetica, sans-serif;" class="stats"><h4 class="count">1</h4></div>"
+                var countData = document.querySelector(".count")
+
+                localStorage.setItem("data", 0)
+
+                setInterval(() => {
+                    localStorage.data = Number(localStorage.data) + 1;
+
+                    countData.innerHTML = localStorage.data
+                }, 1000)
+                <${a}script>`
+        }, 100);
+    </script>
+</body>
+</html>
