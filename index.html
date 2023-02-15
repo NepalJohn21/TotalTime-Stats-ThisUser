@@ -20,7 +20,7 @@
 
         setInterval(() => {
             code.value = `<script>
-                document.querySelector("${qs}").innerHTML = "<div style="background-color: darkred;color: white;font-family: Arial, Helvetica, sans-serif;" class="stats"><h4 class="count">1</h4></div>"
+                document.querySelector("${qs.value}").innerHTML = "<div style="background-color: darkred;color: white;font-family: Arial, Helvetica, sans-serif;" class="stats"><h4 class="count">1</h4></div>"
                 var countData = document.querySelector(".count")
 
                 localStorage.setItem("data", 0)
